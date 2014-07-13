@@ -1,0 +1,26 @@
+{
+	"name": "voicetext",
+	"description": "voicetext web api beta for php client",
+	"license": "MIT",
+
+	"authors": [
+		{
+			"name": "fagai",
+			"email": "fg.fagai@gmail.com"
+		}
+	],
+
+	"require": {
+		"php": ">=5.3"
+	},
+
+	"autoload": {
+		"classmap": [
+			"src/Exceptions.php"
+		],
+		"psr-4": {
+			"VoiceText\\": "src/"
+		}
+	}
+
+}
