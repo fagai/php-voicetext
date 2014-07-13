@@ -1,6 +1,6 @@
 # PHP-VoiceText
 
-VoiceText Web API beta client for PHP
+[VoiceText Web API beta](https://cloud.voicetext.jp/webapi) client for PHP
 
 ## 使う方法
 
