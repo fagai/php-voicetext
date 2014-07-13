@@ -40,7 +40,7 @@ class VoiceText
 	function __construct($apiKey, $params = array())
 	{
 		$this->apiKey = $apiKey;
-		$this->params = array();
+		$this->params = $params;
 	}
 
 	/**
