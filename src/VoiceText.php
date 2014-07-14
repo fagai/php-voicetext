@@ -184,9 +184,9 @@ class VoiceText
 	}
 
 	/**
-	 * flush params
+	 * clean params
 	 */
-	public function flush()
+	public function clean()
 	{
 		$this->params = array();
 	}
