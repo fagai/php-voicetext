@@ -1,5 +1,5 @@
 {
-	"name": "voicetext",
+	"name": "fagai/voicetext",
 	"description": "voicetext web api beta for php client",
 	"license": "MIT",
 
@@ -19,7 +19,7 @@
 			"src/Exceptions.php"
 		],
 		"psr-4": {
-			"VoiceText\\": "src/"
+			"Fagai\\VoiceText\\": "src/"
 		}
 	}
 

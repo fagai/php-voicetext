@@ -1,13 +1,13 @@
-<?php namespace VoiceText\Tests;
+<?php namespace Fagai\VoiceText\Tests;
 
-use \VoiceText\VoiceText;
+use \Fagai\VoiceText\VoiceText;
 use PHPUnit_Framework_TestCase;
 
 require_once('config.php');
 class VoiceTextTest extends PHPUnit_Framework_TestCase
 {
 	/**
-	 * @var \VoiceText\VoiceText
+	 * @var \Fagai\VoiceText\VoiceText
 	 */
 	protected $voice;
 
@@ -21,7 +21,7 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @expectedException \VoiceText\NotAuthorizedException
+	 * @expectedException \Fagai\VoiceText\NotAuthorizedException
 	 */
 	public function testNotAuthorized()
 	{
@@ -33,7 +33,7 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @expectedException \VoiceText\RequestErrorException
+	 * @expectedException \Fagai\VoiceText\RequestErrorException
 	 */
 	public function testRequestError1()
 	{
@@ -43,7 +43,7 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @expectedException \VoiceText\RequestErrorException
+	 * @expectedException \Fagai\VoiceText\RequestErrorException
 	 */
 	public function testRequestError2()
 	{
@@ -77,6 +77,21 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 			'speed' => 120,
 			'volume' => 150,
 			'text' => '今日も一日がんばるぞい！'));
+
+		$this->voice->get();
+	}
+
+	public function testVoiceGet3()
+	{
+		$this->voice = new VoiceText(API_KEY,
+			array(
+				'speaker' => 'hikari',
+				'emotion' => 'happiness',
+				'emotion_level' => 2,
+				'pitch' => 150,
+				'speed' => 120,
+				'volume' => 150,
+				'text' => '今日も一日がんばるぞい！'));
 
 		$this->voice->get();
 	}

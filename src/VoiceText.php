@@ -1,17 +1,17 @@
-<?php namespace VoiceText;
+<?php namespace Fagai\VoiceText;
 
 /**
  * Voice Text Web API Beta Library
  * Class VoiceText
- * @package VoiceText
+ * @package Fagai\VoiceText
  */
 
-use VoiceText\RequestErrorException;
-use VoiceText\NotAuthorizedException;
-use VoiceText\HttpNotFoundException;
-use VoiceText\HttpMethodErrorException;
-use VoiceText\ServerErrorException;
-use VoiceText\ServiceErrorException;
+use Fagai\VoiceText\RequestErrorException;
+use Fagai\VoiceText\NotAuthorizedException;
+use Fagai\VoiceText\HttpNotFoundException;
+use Fagai\VoiceText\HttpMethodErrorException;
+use Fagai\VoiceText\ServerErrorException;
+use Fagai\VoiceText\ServiceErrorException;
 
 class VoiceText
 {

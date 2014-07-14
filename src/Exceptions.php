@@ -1,4 +1,4 @@
-<?php namespace VoiceText;
+<?php namespace Fagai\VoiceText;
 
 /**
  * 400 Error
