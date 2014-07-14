@@ -4,7 +4,13 @@
 
 ## 使う方法
 
-Packagistには登録されてないのでrepositoriesを指定してrequireして下さい。
+adding composer.json
+
+```
+require: {
+	"fagai/voicetext" : "dev-master"
+}
+```
 
 ## Exceptions
 
