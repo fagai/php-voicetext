@@ -183,4 +183,12 @@ class VoiceText
 		return $result;
 	}
 
+	/**
+	 * flush params
+	 */
+	public function flush()
+	{
+		$this->params = array();
+	}
+
 }
