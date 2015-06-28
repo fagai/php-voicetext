@@ -1,6 +1,6 @@
 # PHP-VoiceText
 
-[VoiceText Web API beta](https://cloud.voicetext.jp/webapi) client for PHP
+[VoiceText Web API](https://cloud.voicetext.jp/webapi) client for PHP
 
 ## 使う方法
 
@@ -18,14 +18,6 @@ require: {
 use \Fagai\VoiceText\VoiceText;
 
 $voice = new VoiceText('<your api key>');
-$voice->
-
-```
-
-## Examples
-
-```
-$voice = new VoiceText('<your api key>');
 $voice->speaker('hikari')
       ->emotion('happiness')
       ->emotion_level(2)
@@ -34,8 +26,12 @@ $voice->speaker('hikari')
       ->volume(150)
       ->text('今日も一日がんばるぞい！');
 
+// get wav binary data
 $binaryData = $voice->get();
+
 ```
+
+## Other Examples
 
 ```
 $voice = new VoiceText('<your api key>');
