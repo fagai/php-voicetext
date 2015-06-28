@@ -96,4 +96,26 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 		$this->voice->get();
 	}
 
+	public function testVoiceGetOgg()
+	{
+		$this->voice = new VoiceText(API_KEY,
+			array(
+				'format' => 'ogg',
+				'speaker' => 'hikari',
+				'text' => '今日も一日がんばるぞい！'));
+
+		$this->voice->get();
+	}
+
+	public function testVoiceGetAac()
+	{
+		$this->voice = new VoiceText(API_KEY,
+			array(
+				'format' => 'aac',
+				'speaker' => 'hikari',
+				'text' => '今日も一日がんばるぞい！'));
+
+		$this->voice->get();
+	}
+
 }

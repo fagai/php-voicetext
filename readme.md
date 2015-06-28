@@ -12,6 +12,45 @@ require: {
 }
 ```
 
+```
+<?php
+
+use \Fagai\VoiceText\VoiceText;
+
+$voice = new VoiceText('<your api key>');
+$voice->
+
+```
+
+## Examples
+
+```
+$voice = new VoiceText('<your api key>');
+$voice->speaker('hikari')
+      ->emotion('happiness')
+      ->emotion_level(2)
+      ->pitch(150)
+      ->speed(120)
+      ->volume(150)
+      ->text('今日も一日がんばるぞい！');
+
+$binaryData = $voice->get();
+```
+
+```
+$voice = new VoiceText('<your api key>');
+$voice->setParams([
+	'speaker' => 'hikari',
+	'emotion' => 'happiness',
+	'emotion_level' => 2,
+	'pitch' => 150,
+	'speed' => 120,
+	'volume' => 150,
+	'text' => '今日も一日がんばるぞい！']);
+
+$binaryData = $voice->get();
+```
+
 ## Exceptions
 
 #### RequestErrorException
@@ -38,33 +77,6 @@ require: {
 
 503 Error
 
-## Examples
 
-```
-$voice = new VoiceText('<your api key>');
-$voice->speaker('hikari')
-      ->emotion('happiness')
-      ->emotion_level(2)
-      ->pitch(150)
-      ->speed(120)
-      ->volume(150)
-      ->text('今日も一日がんばるぞい！');
-
-$binaryData = $voice->get();
-```
-
-```
-$voice = new VoiceText('<your api key>');
-$voice->setParams(array(
-	'speaker' => 'hikari',
-	'emotion' => 'happiness',
-	'emotion_level' => 2,
-	'pitch' => 150,
-	'speed' => 120,
-	'volume' => 150,
-	'text' => '今日も一日がんばるぞい！'));
-
-$binaryData = $voice->get();
-```
 
 

@@ -54,6 +54,7 @@ class VoiceText
 	}
 
 	/**
+	 * set speak text
 	 * @param $text
 	 * @return $this
 	 */
@@ -64,6 +65,7 @@ class VoiceText
 	}
 
 	/**
+	 * set speaker
 	 * @param $speaker
 	 * @return $this
 	 */
@@ -74,6 +76,18 @@ class VoiceText
 	}
 
 	/**
+	 * set binary format
+	 * @param $format
+	 * @return $this
+	 */
+	public function format($format)
+	{
+		$this->params['format'] = $format;
+		return $this;
+	}
+
+	/**
+	 * set emotion
 	 * @param $emotion
 	 * @return $this
 	 */
@@ -84,6 +98,7 @@ class VoiceText
 	}
 
 	/**
+	 * set emotion_level
 	 * @param $emotion_level
 	 * @return $this
 	 */
@@ -94,6 +109,7 @@ class VoiceText
 	}
 
 	/**
+	 * set pitch
 	 * @param $pitch
 	 * @return $this
 	 */
@@ -104,6 +120,7 @@ class VoiceText
 	}
 
 	/**
+	 * set speed
 	 * @param $speed
 	 * @return $this
 	 */
@@ -114,6 +131,7 @@ class VoiceText
 	}
 
 	/**
+	 * set volume
 	 * @param $volume
 	 * @return $this
 	 */
