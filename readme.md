@@ -1,5 +1,9 @@
 # PHP-VoiceText
 
+[![Latest Stable Version](https://poser.pugx.org/fagai/voicetext/v/stable)](https://packagist.org/packages/fagai/voicetext)
+[![Latest Unstable Version](https://poser.pugx.org/fagai/voicetext/v/unstable)](https://packagist.org/packages/fagai/voicetext)
+[![License](https://poser.pugx.org/fagai/voicetext/license)](https://packagist.org/packages/fagai/voicetext)
+
 [VoiceText Web API](https://cloud.voicetext.jp/webapi) client for PHP
 
 ## 使う方法
