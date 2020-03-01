@@ -1,120 +1,130 @@
-<?php namespace Fagai\VoiceText\Tests;
+<?php
 
-use \Fagai\VoiceText\VoiceText;
+namespace Fagai\VoiceText\Tests;
 
-require_once('config.php');
+use Fagai\VoiceText\VoiceText;
+
+require_once 'config.php';
 class VoiceTextTest extends \PHPUnit\Framework\TestCase
 {
-	/**
-	 * @var \Fagai\VoiceText\VoiceText
-	 */
-	protected $voice;
+    /**
+     * @var \Fagai\VoiceText\VoiceText
+     */
+    protected $voice;
 
-	/**
-	 * setup
-	 * @return void
-	 */
-	public function setUp()
-	{
-		$this->voice = new VoiceText(API_KEY);
-	}
+    /**
+     * setup
+     *
+     * @return void
+     */
+    public function setUp()
+    {
+        $this->voice = new VoiceText(API_KEY);
+    }
 
-	/**
-	 * @expectedException \Fagai\VoiceText\NotAuthorizedException
-	 */
-	public function testNotAuthorized()
-	{
-		$this->voice = new VoiceText('test');
-		$this->voice->speaker('hikari')
-			->text('今日も一日がんばるぞい！');
+    /**
+     * @expectedException \Fagai\VoiceText\NotAuthorizedException
+     */
+    public function testNotAuthorized()
+    {
+        $this->voice = new VoiceText('test');
+        $this->voice->speaker('hikari')
+            ->text('今日も一日がんばるぞい！');
 
-		$this->voice->get();
-	}
+        $this->voice->get();
+    }
 
-	/**
-	 * @expectedException \Fagai\VoiceText\RequestErrorException
-	 */
-	public function testRequestError1()
-	{
-		$this->voice->text('今日も一日がんばるぞい！');
+    /**
+     * @expectedException \Fagai\VoiceText\RequestErrorException
+     */
+    public function testRequestError1()
+    {
+        $this->voice->text('今日も一日がんばるぞい！');
 
-		$this->voice->get();
-	}
+        $this->voice->get();
+    }
 
-	/**
-	 * @expectedException \Fagai\VoiceText\RequestErrorException
-	 */
-	public function testRequestError2()
-	{
-		$this->voice->speaker('hikari')
-			->pitch(300)
-			->text('今日も一日がんばるぞい！');
+    /**
+     * @expectedException \Fagai\VoiceText\RequestErrorException
+     */
+    public function testRequestError2()
+    {
+        $this->voice->speaker('hikari')
+            ->pitch(300)
+            ->text('今日も一日がんばるぞい！');
 
-		$this->voice->get();
-	}
+        $this->voice->get();
+    }
 
-	public function testVoiceGet1()
-	{
-		$this->voice->speaker('hikari')
-			->emotion('happiness')
-			->emotion_level(2)
-			->pitch(150)
-			->speed(120)
-			->volume(150)
-			->text('今日も一日がんばるぞい！');
-
-        self::assertInternalType('string', $this->voice->get());
-	}
-
-	public function testVoiceGet2()
-	{
-		$this->voice->setParams(array(
-			'speaker' => 'hikari',
-			'emotion' => 'happiness',
-			'emotion_level' => 2,
-			'pitch' => 150,
-			'speed' => 120,
-			'volume' => 150,
-			'text' => '今日も一日がんばるぞい！'));
+    public function testVoiceGet1()
+    {
+        $this->voice->speaker('hikari')
+            ->emotion('happiness')
+            ->emotion_level(2)
+            ->pitch(150)
+            ->speed(120)
+            ->volume(150)
+            ->text('今日も一日がんばるぞい！');
 
         self::assertInternalType('string', $this->voice->get());
-	}
+    }
 
-	public function testVoiceGet3()
-	{
-		$this->voice = new VoiceText(API_KEY,
-			array(
-				'speaker' => 'hikari',
-				'emotion' => 'happiness',
-				'emotion_level' => 2,
-				'pitch' => 150,
-				'speed' => 120,
-				'volume' => 150,
-				'text' => '今日も一日がんばるぞい！'));
-
-        self::assertInternalType('string', $this->voice->get());
-	}
-
-	public function testVoiceGetOgg()
-	{
-		$this->voice = new VoiceText(API_KEY,
-			array(
-				'format' => 'ogg',
-				'speaker' => 'hikari',
-				'text' => '今日も一日がんばるぞい！'));
+    public function testVoiceGet2()
+    {
+        $this->voice->setParams(
+            array(
+            'speaker' => 'hikari',
+            'emotion' => 'happiness',
+            'emotion_level' => 2,
+            'pitch' => 150,
+            'speed' => 120,
+            'volume' => 150,
+            'text' => '今日も一日がんばるぞい！')
+        );
 
         self::assertInternalType('string', $this->voice->get());
-	}
+    }
 
-	public function testVoiceGetMp3()
-	{
-		$this->voice = new VoiceText(API_KEY,
-			array(
-				'format' => 'mp3',
-				'speaker' => 'hikari',
-				'text' => '今日も一日がんばるぞい！'));
+    public function testVoiceGet3()
+    {
+        $this->voice = new VoiceText(
+            API_KEY,
+            array(
+            'speaker' => 'hikari',
+            'emotion' => 'happiness',
+            'emotion_level' => 2,
+            'pitch' => 150,
+            'speed' => 120,
+            'volume' => 150,
+            'text' => '今日も一日がんばるぞい！')
+        );
 
-		self::assertInternalType('string', $this->voice->get());
-	}
+        self::assertInternalType('string', $this->voice->get());
+    }
 
+    public function testVoiceGetOgg()
+    {
+        $this->voice = new VoiceText(
+            API_KEY,
+            array(
+            'format' => 'ogg',
+            'speaker' => 'hikari',
+            'text' => '今日も一日がんばるぞい！')
+        );
+
+        self::assertInternalType('string', $this->voice->get());
+    }
+
+    public function testVoiceGetMp3()
+    {
+        $this->voice = new VoiceText(
+            API_KEY,
+            array(
+            'format' => 'mp3',
+            'speaker' => 'hikari',
+            'text' => '今日も一日がんばるぞい！')
+        );
+
+        self::assertInternalType('string', $this->voice->get());
+    }
 }
