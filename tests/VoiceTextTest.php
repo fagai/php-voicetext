@@ -1,10 +1,9 @@
 <?php namespace Fagai\VoiceText\Tests;
 
 use \Fagai\VoiceText\VoiceText;
-use PHPUnit_Framework_TestCase;
 
 require_once('config.php');
-class VoiceTextTest extends PHPUnit_Framework_TestCase
+class VoiceTextTest extends \PHPUnit\Framework\TestCase
 {
 	/**
 	 * @var \Fagai\VoiceText\VoiceText
@@ -64,7 +63,7 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 			->volume(150)
 			->text('今日も一日がんばるぞい！');
 
-		$this->voice->get();
+        self::assertInternalType('string', $this->voice->get());
 	}
 
 	public function testVoiceGet2()
@@ -78,7 +77,7 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 			'volume' => 150,
 			'text' => '今日も一日がんばるぞい！'));
 
-		$this->voice->get();
+        self::assertInternalType('string', $this->voice->get());
 	}
 
 	public function testVoiceGet3()
@@ -93,7 +92,7 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 				'volume' => 150,
 				'text' => '今日も一日がんばるぞい！'));
 
-		$this->voice->get();
+        self::assertInternalType('string', $this->voice->get());
 	}
 
 	public function testVoiceGetOgg()
@@ -104,18 +103,18 @@ class VoiceTextTest extends PHPUnit_Framework_TestCase
 				'speaker' => 'hikari',
 				'text' => '今日も一日がんばるぞい！'));
 
-		$this->voice->get();
+        self::assertInternalType('string', $this->voice->get());
 	}
 
-	public function testVoiceGetAac()
+	public function testVoiceGetMp3()
 	{
 		$this->voice = new VoiceText(API_KEY,
 			array(
-				'format' => 'aac',
+				'format' => 'mp3',
 				'speaker' => 'hikari',
 				'text' => '今日も一日がんばるぞい！'));
 
-		$this->voice->get();
+		self::assertInternalType('string', $this->voice->get());
 	}
 
 }

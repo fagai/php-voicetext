@@ -8,12 +8,9 @@
 
 ## 使う方法
 
-adding composer.json
 
 ```
-require: {
-	"fagai/voicetext" : "dev-master"
-}
+composer require fagai/voicetext
 ```
 
 ```
